@@ -1,0 +1,23 @@
+apply plugin: 'java'
+//apply plugin: 'maven'
+
+group = 'com.ewolff'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version:'1.1.1.RELEASE'
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.1.1.RELEASE') {
+exclude(module: 'commons-logging')
+    }
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version:'1.1.1.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version:'1.1.1.RELEASE'
+    compile group: 'org.hsqldb', name: 'hsqldb', version:'2.3.2'
+    compile group: 'com.codahale.metrics', name: 'metrics-graphite', version:'3.0.2'
+}
